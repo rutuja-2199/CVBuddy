@@ -75,8 +75,8 @@ function loadStyles() {
 
 function selectStyle(styleId) {
     selectedStyle = styles.find(s => s.id === styleId);
-    document.getElementById('style-selection').style.display = 'none';
-    document.getElementById('form-section').style.display = 'block';
+    document.getElementById('style-selection').classList.add('hidden');
+    document.getElementById('form-section').classList.remove('hidden');
 }
 
 function generateCV(data) {
@@ -96,12 +96,18 @@ function generateCV(data) {
 }
 
 function goToHome() {
-    document.getElementById('style-selection').style.display = 'block';
-    document.getElementById('form-section').style.display = 'none';
-    document.getElementById('preview-section').style.display = 'none';
+    const styleSelection = document.getElementById('style-selection');
+    const formSection = document.getElementById('form-section');
+    const previewSection = document.getElementById('preview-section');
+
+    if (styleSelection) styleSelection.classList.remove('hidden');
+    if (formSection) formSection.classList.add('hidden');
+    if (previewSection) previewSection.classList.add('hidden');
+
     selectedStyle = null;
     // Reset form
-    document.getElementById('cv-form').reset();
+    const form = document.getElementById('cv-form');
+    if (form) form.reset();
     // Scroll to top
     window.scrollTo(0, 0);
 }
@@ -123,22 +129,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = Object.fromEntries(formData);
         const cvHTML = generateCV(data);
         document.getElementById('cv-preview').innerHTML = cvHTML;
-        document.getElementById('form-section').style.display = 'none';
-        document.getElementById('preview-section').style.display = 'block';
+        document.getElementById('form-section').classList.add('hidden');
+        document.getElementById('preview-section').classList.remove('hidden');
     });
 
     document.getElementById('download-btn').addEventListener('click', downloadPDF);
 
     document.getElementById('back-btn').addEventListener('click', () => {
-        document.getElementById('preview-section').style.display = 'none';
-        document.getElementById('form-section').style.display = 'block';
+        document.getElementById('preview-section').classList.add('hidden');
+        document.getElementById('form-section').classList.remove('hidden');
     });
 
     // Home navigation
-    document.querySelector('.navbar-brand').addEventListener('click', (e) => {
-        e.preventDefault();
-        goToHome();
-    });
+    const navbarBrand = document.getElementsByClassName('navbar-brand')[0];
+    if (navbarBrand) {
+        navbarBrand.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToHome();
+        });
+    }
 
     document.querySelector('.display-4').addEventListener('click', () => {
         goToHome();
