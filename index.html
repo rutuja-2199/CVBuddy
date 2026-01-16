@@ -5,59 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CVBuddy - Create Your CV</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Welcome to CVBuddy</h1>
-        <p class="text-center mb-5">Select a CV style to get started</p>
-        
-        <div class="row" id="style-selection">
-            <!-- Styles will be loaded here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-file-earmark-person"></i> CVBuddy</a>
         </div>
-        
-        <div id="form-section" class="mt-5" style="display: none;">
-            <h2>Enter Your Details</h2>
-            <form id="cv-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="name" required>
+    </nav>
+
+    <div class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold prussian-blue mb-3"><i class="bi bi-file-earmark-person-fill prussian-blue"></i> CVBuddy</h1>
+                    <p class="lead mb-4">Create stunning professional CVs in minutes with our easy-to-use templates. Choose your style, fill in your details, and download your perfect resume.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <div class="feature-icon">
+                            <i class="bi bi-palette-fill text-primary fs-1"></i>
+                            <p class="mt-2">Multiple Templates</p>
+                        </div>
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-fill text-warning fs-1"></i>
+                            <p class="mt-2">Quick & Easy</p>
+                        </div>
+                        <div class="feature-icon">
+                            <i class="bi bi-download text-success fs-1"></i>
+                            <p class="mt-2">PDF Download</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="tel" class="form-control" id="phone" required>
-                </div>
-                <div class="mb-3">
-                    <label for="summary" class="form-label">Professional Summary</label>
-                    <textarea class="form-control" id="summary" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="experience" class="form-label">Work Experience</label>
-                    <textarea class="form-control" id="experience" rows="5"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="education" class="form-label">Education</label>
-                    <textarea class="form-control" id="education" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="skills" class="form-label">Skills</label>
-                    <input type="text" class="form-control" id="skills" placeholder="Comma separated">
-                </div>
-                <button type="submit" class="btn btn-primary">Generate CV</button>
-            </form>
-        </div>
-        
-        <div id="preview-section" class="mt-5" style="display: none;">
-            <h2>Your CV Preview</h2>
-            <div id="cv-preview" class="border p-3"></div>
-            <button id="download-btn" class="btn btn-success mt-3">Download as PDF</button>
-            <button id="back-btn" class="btn btn-secondary mt-3 ms-2">Back to Form</button>
+            </div>
         </div>
     </div>
+
+    <div class="container my-5">
+        <div id="style-selection">
+            <h2 class="text-center mb-4">Choose Your CV Style</h2>
+            <div class="row">
+                <!-- Styles will be loaded here -->
+            </div>
+        </div>
+        
+        <div id="form-section" style="display: none;">
+            <h2 class="text-center mb-4"><i class="bi bi-pencil-square"></i> Enter Your Details</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="cv-form" class="bg-white p-4 rounded shadow">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label fw-bold"><i class="bi bi-person"></i> Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label fw-bold"><i class="bi bi-envelope"></i> Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label fw-bold"><i class="bi bi-telephone"></i> Phone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="skills" class="form-label fw-bold"><i class="bi bi-tools"></i> Skills</label>
+                                <input type="text" class="form-control" id="skills" placeholder="Comma separated">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="summary" class="form-label fw-bold"><i class="bi bi-card-text"></i> Professional Summary</label>
+                            <textarea class="form-control" id="summary" rows="3" placeholder="Brief summary of your professional background"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experience" class="form-label fw-bold"><i class="bi bi-briefcase"></i> Work Experience</label>
+                            <textarea class="form-control" id="experience" rows="5" placeholder="List your work experience, roles, and achievements"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="education" class="form-label fw-bold"><i class="bi bi-mortarboard"></i> Education</label>
+                            <textarea class="form-control" id="education" rows="3" placeholder="Your educational background"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-magic"></i> Generate CV</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="preview-section" style="display: none;">
+            <h2 class="text-center mb-4"><i class="bi bi-eye"></i> Your CV Preview</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="cv-preview" class="bg-white p-4 rounded shadow mb-4"></div>
+                    <div class="text-center">
+                        <button id="download-btn" class="btn btn-success btn-lg me-2"><i class="bi bi-download"></i> Download as PDF</button>
+                        <button id="back-btn" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left"></i> Back to Form</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2026 CVBuddy. Create resumes that get hired.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
