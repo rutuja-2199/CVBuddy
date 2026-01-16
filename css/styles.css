@@ -30,9 +30,13 @@ body {
     background: rgba(30, 58, 95, 0.2);
 }
 
-.feature-icon p {
-    margin: 0;
-    font-weight: 500;
+.hero-section h1 {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.hero-section h1:hover {
+    opacity: 0.8;
 }
 
 .navbar {

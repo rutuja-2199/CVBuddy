@@ -102,6 +102,8 @@ function goToHome() {
     selectedStyle = null;
     // Reset form
     document.getElementById('cv-form').reset();
+    // Scroll to top
+    window.scrollTo(0, 0);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         goToHome();
     });
 
-    document.querySelector('.hero-section h1').addEventListener('click', () => {
+    document.querySelector('.display-4').addEventListener('click', () => {
         goToHome();
     });
 });
