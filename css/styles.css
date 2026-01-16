@@ -1,0 +1,56 @@
+/* Custom styles for CVBuddy */
+
+.style-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.style-card:hover {
+    transform: scale(1.05);
+}
+
+.cv-style-1 {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.cv-style-1 .header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cv-style-1 .section {
+    margin-bottom: 20px;
+}
+
+.cv-style-2 {
+    font-family: 'Times New Roman', serif;
+    color: #000;
+}
+
+.cv-style-2 .header {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.cv-style-2 .section h3 {
+    text-decoration: underline;
+}
+
+.cv-style-3 {
+    font-family: Georgia, serif;
+    color: #444;
+}
+
+.cv-style-3 .header {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-left: 5px solid #28a745;
+}
+
+.cv-style-3 .section {
+    margin-left: 20px;
+}
