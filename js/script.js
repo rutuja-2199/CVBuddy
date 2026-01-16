@@ -10,16 +10,12 @@ const styles = [
         preview: `
             <div class="cv-style-1">
                 <div class="header">
-                    <h1>John Doe</h1>
+                    <h4>John Doe</h4>
                     <p>Software Engineer</p>
                 </div>
                 <div class="section">
-                    <h3>Contact</h3>
+                    <h5>Contact</h5>
                     <p>Email: john@example.com</p>
-                </div>
-                <div class="section">
-                    <h3>Experience</h3>
-                    <p>Developed web applications...</p>
                 </div>
             </div>
         `
@@ -31,16 +27,12 @@ const styles = [
         preview: `
             <div class="cv-style-2">
                 <div class="header">
-                    <h2>Jane Smith</h2>
+                    <h4>Jane Smith</h4>
                     <p>Marketing Manager</p>
                 </div>
                 <div class="section">
-                    <h3>Professional Summary</h3>
-                    <p>Experienced marketing professional...</p>
-                </div>
-                <div class="section">
-                    <h3>Work Experience</h3>
-                    <p>Led marketing campaigns...</p>
+                    <h5>Summary</h5>
+                    <p>Experienced professional...</p>
                 </div>
             </div>
         `
@@ -52,16 +44,12 @@ const styles = [
         preview: `
             <div class="cv-style-3">
                 <div class="header">
-                    <h1>Alex Johnson</h1>
+                    <h4>Alex Johnson</h4>
                     <p>Data Analyst</p>
                 </div>
                 <div class="section">
-                    <h3>Skills</h3>
-                    <p>Python, SQL, Tableau...</p>
-                </div>
-                <div class="section">
-                    <h3>Education</h3>
-                    <p>Bachelor's in Computer Science...</p>
+                    <h5>Skills</h5>
+                    <p>Python, SQL...</p>
                 </div>
             </div>
         `
@@ -69,15 +57,15 @@ const styles = [
 ];
 
 function loadStyles() {
-    const container = document.getElementById('style-selection');
+    const container = document.querySelector('#style-selection .row');
     styles.forEach(style => {
         const card = document.createElement('div');
-        card.className = 'col-md-4 mb-4';
+        card.className = 'col-md-4';
         card.innerHTML = `
             <div class="card style-card" data-style="${style.id}">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h5 class="card-title">${style.name}</h5>
-                    <div class="card-text">${style.preview}</div>
+                    <div class="style-preview">${style.preview}</div>
                 </div>
             </div>
         `;
