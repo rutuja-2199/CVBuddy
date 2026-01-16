@@ -11,6 +11,24 @@ body {
     color: white;
 }
 
+.feature-icon {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon p {
+    margin: 0;
+    font-weight: 500;
+}
+
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
